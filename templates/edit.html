@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h1 class="display-4 text-center border-bottom my-4 pb-2">Edit Birthday</h1>
+    <form action="/edit/{{entry.id}}" method="POST" class="form-group">
+        <div class="row">
+            <div class="col-sm-7">
+                <input type="text", name="edit_field" class='form-control form-control-lg my-2', value="{{entry.name}}" required>
+            </div>
+            <div class="col-sm-3">
+                <input type="date" name="b_date" min="1000-01-01" max="3000-12-31" value="{{entry.full_birthdate}}" class="form-control form-control-lg my-2" required>
+            </div>
+            <div class="col-sm-2">
+                {{form.edit_btn(class= "btn btn-primary btn-lg my-2")}}
+            </div>
+        </div>  
+    </form> 
+{% endblock %}
